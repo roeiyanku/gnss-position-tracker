@@ -1,0 +1,18 @@
+# 1. Essential Installations
+!pip install git+https://github.com/Stanford-NavLab/gnss_lib_py.git simplekml
+# 2. Imports
+import os
+import numpy as np
+import pandas as pd
+from datetime import datetime, timezone
+
+# GNSS processing
+import gnss_lib_py as glp
+from gnss_lib_py.utils.ephemeris_downloader import load_ephemeris
+
+# KML Generation
+import simplekml
+
+# 3. Connect to your Assignment Data
+from google.colab import drive
+drive.mount('/content/drive')
