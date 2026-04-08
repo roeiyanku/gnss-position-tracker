@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gnss-position-tracker"
+version = "0.1.0"
+description = "Architecture scaffold for GNSS offline path processing with RINEX ingestion via gnss-lib-py"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "simplekml>=1.3.6",
+  "gnss-lib-py @ git+https://github.com/Stanford-NavLab/gnss_lib_py.git",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
